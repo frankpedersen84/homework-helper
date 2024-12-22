@@ -4,6 +4,9 @@ import os
 from werkzeug.utils import secure_filename
 import base64
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 application = Flask(__name__)
 app = application
