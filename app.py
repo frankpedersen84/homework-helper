@@ -47,9 +47,3 @@ def webhook():
 @app.route('/health', methods=['GET'])
 def health_check():
     return jsonify({'status': 'healthy'}), 200
-
-if __name__ == '__main__':
-    print("Starting server on port 8080...")
-    # App Runner expects port 8080
-    port = 8080
-    app.run(host='0.0.0.0', port=port)

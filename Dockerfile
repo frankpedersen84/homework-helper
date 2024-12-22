@@ -11,4 +11,5 @@ COPY . .
 ENV PORT=8080
 EXPOSE 8080
 
-CMD ["python", "app.py"]
+# Use Gunicorn instead of Flask's development server
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
