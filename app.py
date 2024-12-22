@@ -9,6 +9,16 @@ application = Flask(__name__)  # This is for AWS EB
 app = application  # This is for local development
 CORS(app)
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({
+        'message': 'Welcome to the Homework Helper API',
+        'endpoints': {
+            '/webhook': 'POST - Submit homework questions',
+            '/health': 'GET - Check API health'
+        }
+    }), 200
+
 @app.route('/webhook', methods=['POST'])
 def webhook():
     data = request.json
